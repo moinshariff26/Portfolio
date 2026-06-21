@@ -65,7 +65,7 @@ export function Header() {
   }
 
   return (
-    {/*NEW — iOS 26 Dynamic Island-style floating capsule*/}
+    {/* NEW — iOS 26 Dynamic Island-style floating capsule */}
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
     <div
     className={`pointer-events-auto mt-3 md:mt-4 transition-all duration-300 rounded-2xl ${

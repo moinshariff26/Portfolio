@@ -65,20 +65,31 @@ export function Header() {
   }
 
   return (
-    <header
+    // NEW — iOS 26 Dynamic Island-style floating capsule
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+    <div
+    className={`pointer-events-auto mt-3 md:mt-4 transition-all duration-300 rounded-2xl ${
+      scrolled
+        ? 'border border-border bg-bg-primary/70 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+        : 'border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl'
+    }`}
+  >
+    <div className="max-w-6xl mx-auto px-6 h-12 md:h-14 flex items-center justify-between gap-6">
+
+    /* <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'border-b border-border bg-bg-primary/80 backdrop-blur-xl' : ''
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-14 md:h-16 flex items-center justify-between">
-        <button onClick={() => scrollTo('hero')} className="flex items-center gap-3 shrink-0">
+      <div className="max-w-6xl mx-auto px-6 h-14 md:h-16 flex items-center justify-between"> */
+       /* <button onClick={() => scrollTo('hero')} className="flex items-center gap-3 shrink-0">
           <span className="font-heading font-bold text-base md:text-lg text-text-primary">
             {profile.name}
           </span>
           <span className="font-mono text-[10px] text-accent px-2 py-0.5 rounded-full border border-accent/20 hidden sm:inline">
             @ {profile.company.split(' ')[0]}
           </span>
-        </button>
+        </button> */
 
         <nav className="hidden md:flex items-center justify-center gap-1" aria-label="Main navigation">
           {navLinks.map((link) => (
@@ -134,6 +145,7 @@ export function Header() {
           </button>
         </div>
       </div>
+    </div>
 
       <AnimatePresence>
         {mobileOpen && (
